@@ -1,6 +1,11 @@
 .main {
     height: 100vh;
     width: 100vw;
+}
+
+.error-main {
+    height: 100%;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
@@ -15,9 +20,14 @@
     margin-right: 40px;
 }
 
-#sadFace {
+.sadFace {
+    display: block;
     height: 100%;
     width: 100%;
+}
+
+.hidden {
+    display: none;
 }
 
 .error-msg {
@@ -27,4 +37,9 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.switch {
+    position: absolute;
+    margin-bottom: 2rem;
 }

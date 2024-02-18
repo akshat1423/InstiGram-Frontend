@@ -24,42 +24,40 @@ function Signup() {
                 roll: formData.get('roll'),
             }
 
-            navigate('/profile');
+            fetch("http://127.0.0.1:8000/signup", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data),
+            })
+                .then(async function(res) {
+                    const status = res.status;
+                    const json = await res.json();
 
-            // fetch("http://127.0.0.1:8000/signup", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-type": "application/json"
-            //     },
-            //     body: JSON.stringify(data),
-            // })
-            //     .then(async function(res) {
-            //         const status = res.status;
-            //         const json = await res.json();
-
-            //         if (status == 200) {
-            //             navigate('/profile');
-            //             setValid({
-            //                 username: true,
-            //                 password: true,
-            //                 roll: true
-            //             })
-            //         } else if(status == 409) {
-            //             if (json.data == "username") {
-            //                 setValid({
-            //                     username: false,
-            //                     password: true,
-            //                     roll: true
-            //                 })
-            //             } else if (json.data == "roll") {
-            //                 setValid({
-            //                     username: true,
-            //                     password: true,
-            //                     roll: false
-            //                 })
-            //             }
-            //         }
-            //     })
+                    if (status == 200) {
+                        navigate('/profile');
+                        setValid({
+                            username: true,
+                            password: true,
+                            roll: true
+                        })
+                    } else if(status == 409) {
+                        if (json.data == "username") {
+                            setValid({
+                                username: false,
+                                password: true,
+                                roll: true
+                            })
+                        } else if (json.data == "roll") {
+                            setValid({
+                                username: true,
+                                password: true,
+                                roll: false
+                            })
+                        }
+                    }
+                })
         }
     }
 
