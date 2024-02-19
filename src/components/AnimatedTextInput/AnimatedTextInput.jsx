@@ -20,7 +20,7 @@ export default function AnimatedTextInput({ placeholder, id, type, name, ...root
     if (name == "confirm") {
         return (
             <>
-                <input type={ show ? "text" : "password" } name={ name } id={ id } className={(darkMode ? "dark" : "") + (equal ? "" : "error")} {...rootAttributes} required/>
+                <input type={ show ? "text" : "password" } name={ name } id={ id } className={(darkMode ? "dark" : "") + " " + (equal ? "" : "error")} {...rootAttributes} required/>
                 <label htmlFor={ id } className={darkMode ? "dark" : ""} >{ placeholder }</label>
                 <div onClick={() => setShow(!show)} className="eye">
                     <img src={ show ? eye : eyeSlash } alt="" className={ darkMode ? "dark" : ""} />

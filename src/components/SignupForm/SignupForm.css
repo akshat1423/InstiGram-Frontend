@@ -78,6 +78,10 @@ a:hover {
     border: 1px red solid;
 }
 
+.error.dark {
+    border: 1px red solid;
+}
+
 #prohibited:hover {
     cursor: not-allowed;
     transform: none;
