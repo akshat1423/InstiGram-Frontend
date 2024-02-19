@@ -34,7 +34,7 @@ export default function SignupForm({ handleSubmit }) {
                         <AnimatedTextInput placeholder="Password" name="password" id="password" type="password" autoComplete="new-password" />
 
                         <AnimatedTextInput placeholder="Confirm Password" name="confirm" id="confirm" type="password" autoComplete="new-password"
-                        onChange={ checkEqual } className={ equal ? "" : "error"} />
+                        onChange={ checkEqual } />
                     </>
                 </div>
 
