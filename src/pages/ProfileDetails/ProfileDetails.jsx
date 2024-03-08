@@ -7,6 +7,7 @@ import { imageAtom } from "../../store/imageAtom";
 
 export default function ProfileSetup() {
     const navigate = useNavigate();
+    const image = useRecoilValue(imageAtom);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -14,7 +15,7 @@ export default function ProfileSetup() {
         const formData = new FormData(e.target);
         
         const userId = localStorage.getItem('userId');
-        const image = useRecoilValue(imageAtom);
+        
         console.log(image);
 
         const data = {
@@ -23,7 +24,7 @@ export default function ProfileSetup() {
             department: formData.get('department'),
             degree: formData.get('degree'),
             year: formData.get('year'),
-            profileImage: formData.get('image'),
+            profileImage: image,
         }
 
         fetch("http://localhost:8000/profile/details", {
