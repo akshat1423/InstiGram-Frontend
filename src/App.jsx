@@ -6,6 +6,7 @@ import './mediaqueries.css';
 import Loading from './pages/Loading/Loading';
 
 const Signup = React.lazy(() => import('./pages/Signup/Signup'));
+const ProfileDetails = React.lazy(() => import('./pages/ProfileDetails/ProfileDetails'));
 const Login = React.lazy(() => import('./pages/Login/Login'));
 const Profile = React.lazy(() => import('./pages/Profile/Profile'));
 const Feed = React.lazy(() => import('./pages/Feed/Feed'));
@@ -21,7 +22,8 @@ function App() {
           <Suspense fallback={ <Loading /> }>
             <Routes>
               <Route path='/' element={ <Signup /> } />
-              <Route path='/login' element={ <Login /> } />
+              <Route path='/signin' element={ <Login /> } />
+              <Route path='/profile/details' element={ <ProfileDetails />} />
               <Route path='/profile' element={ <Profile /> } />
               <Route path='/feed' element={ <Feed />} />
               <Route path='/loading' element={ <Loading /> } />

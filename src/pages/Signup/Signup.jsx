@@ -36,12 +36,15 @@ function Signup() {
                     const json = await res.json();
 
                     if (status == 200) {
-                        navigate('/profile');
+                        navigate('/profile/details');
                         setValid({
                             username: true,
                             password: true,
                             roll: true
                         })
+
+                        localStorage.setItem("userId", json.userId);
+
                     } else if(status == 409) {
                         if (json.data == "username") {
                             setValid({
@@ -49,12 +52,14 @@ function Signup() {
                                 password: true,
                                 roll: true
                             })
+                            alert('Username Taken');
                         } else if (json.data == "roll") {
                             setValid({
                                 username: true,
                                 password: true,
                                 roll: false
                             })
+                            alert('Roll Number Taken');
                         }
                     }
                 })
