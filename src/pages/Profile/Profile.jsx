@@ -18,13 +18,25 @@ function Profile() {
 
   useEffect(() => {
     
-    fetch('backend')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      setPosts(data.posts);
-      setDP(data.DP);
-      setDetails(data.details)
+    const userId = localStorage.getItem('userId');
+
+    const data = {
+      userId: userId
+    }
+
+    fetch('http://localhost:8000/profile',{
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          setPosts(data.posts);
+          setDP(data.DP);
+          setDetails(data.details)
       
 
     })

@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import Card from "../../components/Card/Card";
 import DarkModeSwitch from "../../components/DarkModeSwitch/DarkModeSwitch";
 import ProfileSetupForm from "../../components/ProfileSetupForm/ProfileSetupForm";
+import { useRecoilValue } from "recoil";
+import { imageAtom } from "../../store/imageAtom";
 
 export default function ProfileSetup() {
     const navigate = useNavigate();
@@ -12,6 +14,8 @@ export default function ProfileSetup() {
         const formData = new FormData(e.target);
         
         const userId = localStorage.getItem('userId');
+        const image = useRecoilValue(imageAtom);
+        console.log(image);
 
         const data = {
             userId: userId,
@@ -36,7 +40,7 @@ export default function ProfileSetup() {
                 console.log(json);
 
                 if(status == 200) {
-                    navigate('/interests');
+                    navigate('/feed');
                 }
             })
     }

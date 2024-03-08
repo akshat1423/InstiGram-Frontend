@@ -41,7 +41,7 @@ export default function App(){
         <Post darkMode={darkMode} className="post"/>
         <Post darkMode={darkMode} className="post"/>
         </div>
-       
+      
       </div>
     )
 }
