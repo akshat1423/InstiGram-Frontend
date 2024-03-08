@@ -36,7 +36,7 @@ function Signup() {
                     const json = await res.json();
 
                     if (status == 200) {
-                        navigate('/profile');
+                        navigate('/profile/details');
                         setValid({
                             username: true,
                             password: true,
@@ -49,12 +49,14 @@ function Signup() {
                                 password: true,
                                 roll: true
                             })
+                            alert('Username Taken');
                         } else if (json.data == "roll") {
                             setValid({
                                 username: true,
                                 password: true,
                                 roll: false
                             })
+                            alert('Roll Number Taken');
                         }
                     }
                 })
