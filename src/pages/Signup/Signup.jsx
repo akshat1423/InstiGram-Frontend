@@ -42,6 +42,9 @@ function Signup() {
                             password: true,
                             roll: true
                         })
+
+                        localStorage.setItem("userId", json.userId);
+
                     } else if(status == 409) {
                         if (json.data == "username") {
                             setValid({

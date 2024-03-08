@@ -48,7 +48,7 @@ export default function SignupForm({ handleSubmit }) {
                 
                 <div className="text-div">
                     <p className="text">Already have an Account?</p>
-                    <Link to='/login'>Log In</Link>
+                    <Link to='/signin'>Log In</Link>
                 </div>
             </form>
         </div>

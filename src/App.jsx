@@ -22,7 +22,7 @@ function App() {
           <Suspense fallback={ <Loading /> }>
             <Routes>
               <Route path='/' element={ <Signup /> } />
-              <Route path='/login' element={ <Login /> } />
+              <Route path='/signin' element={ <Login /> } />
               <Route path='/profile/details' element={ <ProfileDetails />} />
               <Route path='/profile' element={ <Profile /> } />
               <Route path='/feed' element={ <Feed />} />

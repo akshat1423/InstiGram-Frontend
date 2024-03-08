@@ -22,7 +22,7 @@ export default function ProfileSetup() {
             profileImage: formData.get('image'),
         }
 
-        fetch("http://localhost:3000/profile/details", {
+        fetch("http://localhost:8000/profile/details", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

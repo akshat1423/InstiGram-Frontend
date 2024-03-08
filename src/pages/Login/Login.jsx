@@ -19,7 +19,7 @@ function Login() {
         
         e.preventDefault();
 
-        fetch("http://127.0.0.1:8000/login", {
+        fetch("http://127.0.0.1:8000/signin", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -38,7 +38,7 @@ function Login() {
                         roll: true
                     })
                 } else if (status == 409) {
-                    alert("Wrong username or Password");
+                    alert("Wrong Username or Password");
                     if (json.data == "username") {
                         setValid({
                             username: false,
