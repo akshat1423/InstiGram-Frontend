@@ -29,25 +29,18 @@ function Profile() {
     console.log(data);
     console.log(JSON.stringify(data));
 
-    const fetchData = async () => {
+    fetch('http://localhost:8000/profile', {
+      method: "POST",
+      headers: {
+        "Content-type": 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(async function(res) {
+        const json = await res.json();
+        console.log(json);
 
-
-      try {
-        const response = await fetch('http://localhost:8000/profile');
-        const data = await response.json();
-
-        setPosts(data.posts);
-        setDP(data.image);
-        setDetails(data.details);
-
-      } catch (error) {
-        alert("User not found");
-        navigate("/signin");
-      }
-
-    }
-
-    fetchData();
+      })
   }, []);
 
   return(
