@@ -15,8 +15,6 @@ export default function ProfileSetup() {
         const formData = new FormData(e.target);
         
         const userId = localStorage.getItem('userId');
-        
-        console.log(image);
 
         const data = {
             userId: userId,
