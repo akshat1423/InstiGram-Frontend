@@ -27,7 +27,7 @@
   letter-spacing: 0.2em;
 }
 
-.dark{
+.loader.dark{
   background-color: var(--background-color-dark) ;
   color: var(--loader-color-dark);
 }
@@ -42,8 +42,8 @@
   position: absolute;
   animation: load .7s infinite alternate ease-in-out;
 }
-.dark .loader::before,
-.dark .loader::after {
+.loader.dark::before,
+.loader.dark::after {
   background: var(--loader-color-dark);
 }
   
